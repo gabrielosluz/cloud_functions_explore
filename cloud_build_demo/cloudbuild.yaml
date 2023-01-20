@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - hello_world_frrom_cloud_build
+  - --region=us-east1
+  - --source=https://source.developers.google.com/projects/canvas-pathway-374021/github_gabrielosluz_cloud_functions_explore/main/paths/cloud_build_demo
+  - --trigger-http
+  - --runtime=python39
+  - --memory=128MB
+  - --project=canvas-pathway-374021
+  - --entry-point=hello_world
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
