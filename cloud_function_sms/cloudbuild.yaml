@@ -7,7 +7,7 @@ steps:
   - cloud_function_sms
   - --region=us-central1
   - --source=https://source.developers.google.com/projects/canvas-pathway-374021/repos/github_gabrielosluz_cloud_functions_explore/moveable-aliases/main/paths/cloud_function_sms
-  - --trigger-topic=sms_twilio
+  - --trigger-topic=sms_twilio_2
   - --runtime=python39
   - --memory=512MB
   - --project=canvas-pathway-374021
