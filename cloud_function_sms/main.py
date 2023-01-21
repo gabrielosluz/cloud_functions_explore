@@ -12,24 +12,15 @@ def hello_pubsub(event, context):
     pubsub_message = base64.b64decode(event['data']).decode('utf-8')
     print(pubsub_message)
 
-    account_sid = 'AC22fcfed0682af349f9713c409273d4c3'
-    auth_token = '2bcbf768bf56e61d222fc47ce5d6dcd9'
+    account_sid = 'AC0d451b7f8ebb5155874000ca292aa727'
+    auth_token = '19fe1145ccdd15556d6a16f3ce5b9f4e'
     client = Client(account_sid, auth_token)
 
-    # message = client.messages \
-    #     .create(
-    #     body='This is the ship that made the Kessel Run in fourteen parsecs?',
-    #     from_='+15017122661',
-    #     to='+15558675310'
-    # )
+    message = client.messages \
+        .create(
+        body='Mensagem:' + pubsub_message,
+        from_='+16812461902',
+        to='+55982930075'
+    )
 
-    numbers_to_message = ['+5521982930075', '+5521992924005', '+5521994675452', '+5521975600522', '+5521988667469', '+5521996357742', '+5521975287060', '+5521998087781', '+5521980862382', '+5521964787456', '+5521982151748','+5521999016181', '+5531993515421']
-    for number in numbers_to_message:
-        client.messages.create(
-            body='Mensagem para voce:' + pubsub_message,
-            from_='+15154894323',
-            to=number
-        )
-    print(numbers_to_message)
-
-    # print(message.sid)
+    print(message.sid)
