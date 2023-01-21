@@ -13,7 +13,7 @@ def hello_pubsub(event, context):
     print(pubsub_message)
 
     account_sid = 'AC22fcfed0682af349f9713c409273d4c3'
-    auth_token = 'ff579544e96753ea95467c8f458decb6'
+    auth_token = '2bcbf768bf56e61d222fc47ce5d6dcd9'
     client = Client(account_sid, auth_token)
 
     # message = client.messages \
@@ -23,13 +23,12 @@ def hello_pubsub(event, context):
     #     to='+15558675310'
     # )
 
-    numbers_to_message = ['+5521992924005', '+5521994675452', '+5521975600522', '+5521988667469']
+    numbers_to_message = ['+5521982930075', '+5521992924005', '+5521994675452', '+5521975600522', '+5521988667469']
     for number in numbers_to_message:
         client.messages.create(
-            body='Mensagem para voce:'+pubsub_message,
+            body='Mensagem para voce:' + pubsub_message,
             from_='+15154894323',
             to=number
         )
 
     # print(message.sid)
-
