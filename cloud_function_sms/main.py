@@ -30,5 +30,6 @@ def hello_pubsub(event, context):
             from_='+15154894323',
             to=number
         )
+    print(numbers_to_message)
 
     # print(message.sid)
