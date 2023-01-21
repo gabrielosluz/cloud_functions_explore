@@ -20,7 +20,7 @@ def hello_pubsub(event, context):
         .create(
         body='Mensagem:' + pubsub_message,
         from_='+16812461902',
-        to='+55982930075'
+        to='+5521982930075'
     )
 
     print(message.sid)
