@@ -13,7 +13,7 @@ def hello_pubsub(event, context):
     print(pubsub_message)
 
     account_sid = 'AC0d451b7f8ebb5155874000ca292aa727'
-    auth_token = '19fe1145ccdd15556d6a16f3ce5b9f4e'
+    auth_token = 'f2d010281fe23a87fd5920350c9f7bf4'
     client = Client(account_sid, auth_token)
 
     message = client.messages \
