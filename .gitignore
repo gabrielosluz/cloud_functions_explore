@@ -132,6 +132,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+cloud_function_email/.env.yaml
 
 # Spyder project settings
 .spyderproject
