@@ -1,0 +1,1 @@
+gcloud functions deploy send_email --region=us-central1 --env-vars-file .env.yaml --runtime python37 --trigger-http --project=canvas-pathway-374021 --entry-point=send_email
