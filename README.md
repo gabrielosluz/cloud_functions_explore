@@ -8,5 +8,6 @@
 
 - Projeto 1 - Cloud Function para enviar SMS.
 - Projeto 2 - Cloud Function para enviar emails.
-- Projeto 3 - Cloud Function com Vision API para Detecção de Faces
-- Projeto 4 - Cloud Function com Cloud Scheduler
+- Projeto 3 - Cloud Function com Vision API para Detecção de Faces.
+- Projeto 4 - Cloud Function com Cloud Scheduler.
+- Projeto 5 - Processamento de csv com Cloud Functions.
