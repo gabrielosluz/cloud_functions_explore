@@ -3,6 +3,7 @@ from parametros.env_configs import EnvConfigs
 from google.cloud import bigquery
 from google.cloud import storage
 import numpy as np
+import datetime
 from datetime import datetime
 import logging
 import google.cloud.logging
@@ -26,27 +27,27 @@ def main(event, context):
 
         env_configs = EnvConfigs()
 
-        blob_path = file['name'].split("/")
-
         project = env_configs.get_gcp_project()
         bucket_destination = env_configs.get_bucket_destination()
         bucket_source = env_configs.get_bucket_source()
 
         bucket = file['bucket']
         file_path = file['name']
-        time_created = file['timeCreated']
 
         logging.info('Carregando o arquivo "{}" no dataframe.'.format(uri))
         df = pd.read_csv(uri)
 
-        #df["File_Source"] = file['name']
-        #df["Ingestion_Date"] = pd.Timestamp.today().strftime('%Y-%m-%d')
+        df["File_Source"] = file['name']
+        df["Ingestion_Date"] = pd.Timestamp.today().strftime('%Y-%m-%d')
 
-        #df = df.fillna(value=np.nan)
+        logging.info('Carregando arquivo: "{}" no bucket historico.'.format(file['name']))
 
-        #df = df.replace('None', '')
+        path_destination = "gs://" + bucket_destination + "/" + str(datetime.now().date()) + "/" + file_path + '.parquet.gzip'
 
-        #df["FilenameInput"] = uri
+        logging.info('Convertendo e salvando o arquivo "{}" no formato parquet em "{}".'.format(uri, path_destination))
+
+        df.to_parquet(path_destination, compression='gzip')
+
 
 
     except Exception as e:
