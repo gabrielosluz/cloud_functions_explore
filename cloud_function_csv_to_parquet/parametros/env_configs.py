@@ -1,7 +1,8 @@
+import logging
 import os
 import sys
 
-from cloud_function_csv_to_parquet.parametros import logger
+from parametros.logger import logger
 
 
 class EnvConfigs:
@@ -9,8 +10,8 @@ class EnvConfigs:
         self.environment_configs = os.environ
         self.expected_envs = [
             "GCP_PROJECT",
-            "BUCKET_SOURCE",
-            "BUCKET_DESTINATION",
+            "BUCKET_RAW",
+            "BUCKET_HIST",
             "BQ_DESTINATION_DATASET",
             "BQ_DESTINATION_TABLE"
         ]
@@ -26,10 +27,10 @@ class EnvConfigs:
         return self.environment_configs.get("GCP_PROJECT")
 
     def get_bucket_source(self):
-        return self.environment_configs.get("BUCKET_SOURCE")
+        return self.environment_configs.get("BUCKET_RAW")
 
     def get_bucket_destination(self):
-        return self.environment_configs.get("BUCKET_DESTINATION")
+        return self.environment_configs.get("BUCKET_HIST")
 
     def get_bq_destination_dataset(self):
         return self.environment_configs.get("BQ_DESTINATION_DATASET")
