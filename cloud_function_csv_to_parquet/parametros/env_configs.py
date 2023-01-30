@@ -11,9 +11,7 @@ class EnvConfigs:
         self.expected_envs = [
             "GCP_PROJECT",
             "BUCKET_RAW",
-            "BUCKET_HIST",
-            "BQ_DESTINATION_DATASET",
-            "BQ_DESTINATION_TABLE"
+            "BUCKET_HIST"
         ]
         self.validate()
 
@@ -32,8 +30,3 @@ class EnvConfigs:
     def get_bucket_destination(self):
         return self.environment_configs.get("BUCKET_HIST")
 
-    def get_bq_destination_dataset(self):
-        return self.environment_configs.get("BQ_DESTINATION_DATASET")
-
-    def get_bq_destination_table(self):
-        return self.environment_configs.get("BQ_DESTINATION_TABLE")

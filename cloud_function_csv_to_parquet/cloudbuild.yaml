@@ -4,14 +4,14 @@ steps:
   - gcloud
   - functions
   - deploy
-  - cf_convert_json_to_parquet
-  - --region=southamerica-east1
-  - --source=link_repo
-  - --trigger-bucket=bucket
+  - cf_csv_to_parquet
+  - --region=us-central1
+  - --allow-unauthenticated
+  - --source=https://source.developers.google.com/projects/canvas-pathway-374021/repos/github_gabrielosluz_cloud_functions_explore/moveable-aliases/main/paths/cloud_function_csv_to_parquet
+  - --trigger-bucket=stack-cf-data-pipeline-raw
   - --runtime=python39
-  - --memory=2048MB
-  - --project=projeto_gcp
+  - --memory=128MB
+  - --project=canvas-pathway-374021
   - --entry-point=main
-  - --set-env-vars=variaveis=var
-  - --update-labels=labels=labels
-  - --service-account=service_accounts
+  - --set-env-vars=GCP_PROJECT=canvas-pathway-374021, BUCKET_RAW=stack-cf-data-pipeline-raw,BUCKET_HIST=stack-cf-data-pipeline-hist
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
