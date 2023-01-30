@@ -10,7 +10,7 @@ steps:
   - --source=https://source.developers.google.com/projects/canvas-pathway-374021/repos/github_gabrielosluz_cloud_functions_explore/moveable-aliases/main/paths/cloud_function_csv_to_parquet
   - --trigger-bucket=stack-cf-data-pipeline-raw
   - --runtime=python39
-  - --memory=128MB
+  - --memory=2048MB
   - --project=canvas-pathway-374021
   - --entry-point=main
   - --set-env-vars=GCP_PROJECT=canvas-pathway-374021,BUCKET_RAW=stack-cf-data-pipeline-raw,BUCKET_HIST=stack-cf-data-pipeline-hist
