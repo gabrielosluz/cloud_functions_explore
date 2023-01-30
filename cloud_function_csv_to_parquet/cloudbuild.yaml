@@ -13,5 +13,5 @@ steps:
   - --memory=128MB
   - --project=canvas-pathway-374021
   - --entry-point=main
-  - --set-env-vars=GCP_PROJECT=canvas-pathway-374021, BUCKET_RAW=stack-cf-data-pipeline-raw,BUCKET_HIST=stack-cf-data-pipeline-hist
+  - --set-env-vars=GCP_PROJECT=canvas-pathway-374021,BUCKET_RAW=stack-cf-data-pipeline-raw,BUCKET_HIST=stack-cf-data-pipeline-hist
   - --update-labels=course=cloud_functions,env=dev,layer=raw
