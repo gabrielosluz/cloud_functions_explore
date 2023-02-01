@@ -52,7 +52,7 @@ def main(event, context):
         #               {'name': 'File_Source', 'type': 'STRING'},
         #               {'name': 'Ingestion_Date', 'type': 'TIMESTAMP'}]
 
-        pandas_gbq.to_gbq(df, table_id, project_id=project, if_exists='append', table_schema=types_dict)
+        pandas_gbq.to_gbq(df, table_id, project_id=project, if_exists='append')
 
 
     except Exception as e:
