@@ -4,6 +4,8 @@ import logging
 import google.cloud.logging
 import pandas as pd
 import pandas_gbq
+import datetime
+import os
 
 logging_client = google.cloud.logging.Client()
 logging_client.get_default_handler()
@@ -39,7 +41,18 @@ def main(event, context):
 
         logging.info('Carregando o dataframe na tabela "{}".'.format(table_id))
 
-        pandas_gbq.to_gbq(df, table_id, project_id=project, if_exists='append')
+        types_dict = [{'name': 'player_name', 'type': 'STRING'},
+                      {'name': 'club', 'type': 'STRING'},
+                      {'name': 'position', 'type': 'STRING'},
+                      {'name': 'minutes_played', 'type': 'INT'},
+                      {'name': 'match_played', 'type': 'INT'},
+                      {'name': 'goals', 'type': 'INT'},
+                      {'name': 'assists', 'type': 'INT'},
+                      {'name': 'distance_covered', 'type': 'STRING'},
+                      {'name': 'File_Source', 'type': 'STRING'},
+                      {'name': 'Ingestion_Date', 'type': 'datetime'}]
+
+        pandas_gbq.to_gbq(df, table_id, project_id=project, if_exists='append', table_schema=types_dict)
 
 
     except Exception as e:
