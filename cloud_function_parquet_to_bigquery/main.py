@@ -39,7 +39,7 @@ def main(event, context):
 
         logging.info('Carregando o dataframe na tabela "{}".'.format(table_id))
 
-        pandas_gbq.to_gbq(df, table_id, project_id=project)
+        pandas_gbq.to_gbq(df, table_id, project_id=project, if_exists='append')
 
 
     except Exception as e:
