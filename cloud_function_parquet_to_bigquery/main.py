@@ -44,13 +44,13 @@ def main(event, context):
         types_dict = [{'name': 'player_name', 'type': 'STRING'},
                       {'name': 'club', 'type': 'STRING'},
                       {'name': 'position', 'type': 'STRING'},
-                      {'name': 'minutes_played', 'type': 'INT'},
-                      {'name': 'match_played', 'type': 'INT'},
-                      {'name': 'goals', 'type': 'INT'},
-                      {'name': 'assists', 'type': 'INT'},
+                      {'name': 'minutes_played', 'type': 'INTEGER'},
+                      {'name': 'match_played', 'type': 'INTEGER'},
+                      {'name': 'goals', 'type': 'INTEGER'},
+                      {'name': 'assists', 'type': 'INTEGER'},
                       {'name': 'distance_covered', 'type': 'STRING'},
                       {'name': 'File_Source', 'type': 'STRING'},
-                      {'name': 'Ingestion_Date', 'type': 'datetime'}]
+                      {'name': 'Ingestion_Date', 'type': 'TIMESTAMP'}]
 
         pandas_gbq.to_gbq(df, table_id, project_id=project, if_exists='append', table_schema=types_dict)
 
