@@ -7,7 +7,7 @@ steps:
   - cloud_function_sms_2
   - --region=us-central1
   - --env-vars-file .env.yaml
-  - --source=https://source.developers.google.com/projects/canvas-pathway-374021/repos/github_gabrielosluz_cloud_functions_explore/moveable-aliases/main/paths/cloud_function_sms
+  - --source=https://source.developers.google.com/projects/canvas-pathway-374021/repos/github_gabrielosluz_cloud_functions_explore/moveable-aliases/main/paths/cloud_function_sms_2
   - --trigger-topic=sms_twilio_3
   - --runtime=python39
   - --memory=512MB
