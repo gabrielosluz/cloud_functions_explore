@@ -18,9 +18,8 @@ def hello_pubsub(event, context):
 
     message = client.messages \
         .create(
-        body='This is the ship that made the Kessel Run in fourteen parsecs?',
+        body='Mensagem:' + pubsub_message,
         from_='+16812461902',
-        media_url=['https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg'],
         to='+5521982930075'
     )
 
