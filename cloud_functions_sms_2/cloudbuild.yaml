@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - cloud_function_sms_2
+  - --region=us-central1
+  - --env-vars-file .env.yaml
+  - --source=https://source.developers.google.com/projects/canvas-pathway-374021/repos/github_gabrielosluz_cloud_functions_explore/moveable-aliases/main/paths/cloud_function_sms
+  - --trigger-topic=sms_twilio_3
+  - --runtime=python39
+  - --memory=512MB
+  - --project=canvas-pathway-374021
+  - --entry-point=hello_pubsub
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
